@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/plotly.js"></script>
+</head>
+<body>
+    <div style="width: 33%; height: 500px; float: left;">
+        <div id="myDiv1"></div>
+        <button id="playButton1">Play</button>
+    </div>
+    <div style="width: 33%; height: 500px; float: left;">
+        <div id="myDiv2"></div>
+        <button id="playButton2">Play</button>
+    </div>
+    <div style="width: 33%; height: 500px; float: left;">
+        <div id="myDiv3"></div>
+        <button id="playButton3">Play</button>
+    </div>
+    <script>
+        // 샘플 데이터 생성
+        function generateData(shift) {
+            var data = [];
+            for (var i = 0; i < 100; i++) {
+                data[i] = [];
+                for (var j = 0; j < 100; j++) {
+                    data[i][j] = Math.abs(Math.sin((i + shift) / 20) * Math.cos(j / 50));
+                }
+            }
+            return data;
+        }
+
+        function generateData2(shift) {
+            var data = [];
+            for (var i = 0; i < 100; i++) {
+                data[i] = [];
+                for (var j = 0; j < 100; j++) {
+                    data[i][j] = Math.abs(Math.sin((i + shift) / 10) * Math.cos(j / 10));
+                }
+            }
+            return data;
+        }
+
+        function generateData3(shift) {
+            var data = [];
+            for (var i = 0; i < 100; i++) {
+                data[i] = [];
+                for (var j = 0; j < 100; j++) {
+                    data[i][j] = Math.abs(Math.sin((i + shift) / 50) * Math.cos(j / 15));
+                }
+            }
+            return data;
+        }
+
+
+
+        // 초기 플롯 생성
+        var data = [{
+            z: generateData(0),
+            type: 'surface',
+            colorscale: 'Jet',
+            showscale: false  // 기둥(축)을 숨깁니다.
+        }];
+
+        var data2 = [{
+            z: generateData2(0),
+            type: 'surface',
+            colorscale: 'Jet',
+            showscale: false  // 기둥(축)을 숨깁니다.
+        }];
+
+        var data3 = [{
+            z: generateData3(0),
+            type: 'surface',
+            colorscale: 'Jet',
+            showscale: false  // 기둥(축)을 숨깁니다.
+        }];
+
+        var layout = {
+            title: '3D Surface Plot',
+            autosize: false,
+            width: 500,
+            height: 500,
+            margin: {
+                l: 65,
+                r: 50,
+                b: 65,
+                t: 90,
+            }
+        };
+
+        var config = {
+            displayModeBar: false  // 편집 메뉴를 숨깁니다.
+        };
+
+        Plotly.newPlot('myDiv1', data, layout, config);
+        Plotly.newPlot('myDiv2', data2, layout, config);
+        Plotly.newPlot('myDiv3', data3, layout, config);
+
+        // 'Play' 버튼 클릭 이벤트 핸들러
+        var shift1 = 0;
+        var shift2 = 0;
+        var shift3 = 0;
+        var intervalId1 = null;
+        var intervalId2 = null;
+        var intervalId3 = null;
+
+        document.getElementById('playButton1').addEventListener('click', function() {
+            var button = document.getElementById('playButton1');
+            if (button.textContent === 'Play') {
+                button.textContent = 'Stop';
+                intervalId1 = setInterval(function() {
+                    shift1 += 10;
+                    Plotly.update('myDiv1', { z: [generateData(shift1)] });
+                }, 100);
+            } else {
+                button.textContent = 'Play';
+                clearInterval(intervalId1);
+            }
+        });
+
+        document.getElementById('playButton2').addEventListener('click', function() {
+            var button = document.getElementById('playButton2');
+            if (button.textContent === 'Play') {
+                button.textContent = 'Stop';
+                intervalId2 = setInterval(function() {
+                    shift2 += 10;
+                    Plotly.update('myDiv2', { z: [generateData2(shift2)] });
+                }, 300);
+            } else {
+                button.textContent = 'Play';
+                clearInterval(intervalId2);
+            }
+        });
+
+        document.getElementById('playButton3').addEventListener('click', function() {
+            var button = document.getElementById('playButton3');
+            if (button.textContent === 'Play') {
+                button.textContent = 'Stop';
+                intervalId3 = setInterval(function() {
+                    shift3 += 10;
+                    Plotly.update('myDiv3', { z: [generateData3(shift3)] });
+                }, 100);
+            } else {
+                button.textContent = 'Play';
+                clearInterval(intervalId3);
+            }
+        });
+    </script>
+</body>
+</html>

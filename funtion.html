@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/funtion.css">
+    <title>Image Gallery</title>
+</head>
+<body>
+    <div class="gallery-table">
+        <table>
+            <tr>
+                <td onmouseover="zoomImage(this)" onmouseout="unzoomImage(this)" onclick="showModal('image4.jpg')">
+                    <img src="images/image4.jpg" alt="Image 4">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="myModal" class="modal" onclick="hideModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="js/gallery.js"></script>
+</body>
+</html>

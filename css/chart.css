@@ -1,0 +1,38 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.gallery-container {
+    max-width: auto;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.gallery {
+    display: flex;
+    overflow: hidden;
+}
+
+.gallery-item {
+    width: 100%;
+    flex: 0 0 auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.navigation {
+    margin-top: 10px;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 5px;
+}
