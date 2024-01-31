@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(html => {
                 contentContainer.innerHTML = html;
+
             })
             .catch(error => {
                 console.error(error);
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
             loadContent(item.id);
         });
     });
-    
+
     const experienceItem = document.querySelectorAll('.experience-item');
     experienceItem.forEach(item => {
         item.addEventListener('mouseover', () => {
@@ -35,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
             item.style.backgroundColor = '#fff';
         });
     });
+
+    loadContent('experience');
 });
 
 function toggleDetails(projectId) {

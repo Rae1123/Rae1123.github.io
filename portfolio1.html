@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Portfolio</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Your Logo</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner" id="bannerSection">
+        <div id="bannerImage"></div>
+    </section>
+
+    <section class="intro">
+        <div class="left">
+            <img src="images/image2.jpg" alt="Your Photo">
+        </div>
+        <div class="right">
+            <h2>Your Name</h2>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <div class="item" onclick="showDetails('item1')">
+            <img src="images/image3.jpg" alt="Portfolio Item 1">
+        </div>
+        <div class="item" onclick="showDetails('item2')">
+            <img src="images/image4.jpg" alt="Portfolio Item 2">
+        </div>
+
+        <!-- Add more items as needed -->
+    </section>
+
+    <section class="details" id="itemDetails">
+        <!-- Details of the selected portfolio item will be displayed here -->
+        <div class="close" onclick="hideDetails()">X</div>
+        <div class="content">
+            <h2>Item Title</h2>
+            <p>Item description goes here...</p>
+        </div>
+    </section>
+
+    <section class="extra">
+        <!-- Additional content goes here -->
+        <div class="extra-content">
+            <h2>Additional Section</h2>
+            <p>This is some additional content...</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

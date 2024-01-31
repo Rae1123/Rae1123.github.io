@@ -18,6 +18,11 @@ body {
     margin-right: 10px;
 }
 
+.menu.active {
+    font-weight: bold; 
+    color: #fffb00;   
+}
+
 .menu-container {
     display: flex;
     justify-content: space-around;

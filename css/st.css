@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navigation Styles */
+.navbar {
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 150px 0;
+    background: url('hero-background.jpg') center/cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Portfolio Section Styles */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.grid-item {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Project Details Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.section {
+    padding: 50px 0;
+}
+
+.section__content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-image__row {
+    align-items: center;
+}
+
+.text-image__image {
+    position: relative;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+.text-image__placeholder {
+    padding-bottom: 66.66666667%;
+    /* This ratio is based on a 3:2 image aspect ratio */
+}
+
+.text-image__content {
+    padding: 30px;
+}
+
+.color-yellow {
+    color: yellow;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 640px) {
+    .text-image__image {
+        height: 200px;
+    }
+
+    .text-image__placeholder {
+        padding-bottom: 200%;
+        /* This ratio is based on a 1:1 image aspect ratio */
+    }
+}
